@@ -1,11 +1,10 @@
 function binarySearch(sortedArr, number) {
   let low = 0;
   let high = sortedArr.length - 1;
-  let mid, guess;
   let steps = 0;
 
-  while (low < high) {
-    mid = Math.trunc((low + high) / 2);
+  while (low <= high) {
+    mid = Math.floor((low + high) / 2);
     guess = sortedArr[mid];
     steps += 1;
 
@@ -14,16 +13,16 @@ function binarySearch(sortedArr, number) {
       return guess;
     }
 
-    if (guess > number) {
-      high = mid;
+    if (guess < number) {
+      low = mid + 1;
     } else {
-      low = mid;
+      high = mid - 1;
     }
   }
   return null;
 }
 
-let arr = Array.from(Array(21331222).keys());
-let result = binarySearch(arr, 23312);
+let arr = Array.from(Array(10000).keys());
+let result = binarySearch(arr, 9999);
 
 console.log("result: ", result);
