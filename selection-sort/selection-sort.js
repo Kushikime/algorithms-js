@@ -28,3 +28,14 @@ let arrTest = [233, 213, 321124, 4, 5, 43234, 432, 1];
 let sortedList = sortArray(arrTest);
 
 console.log("result: ", sortedList);
+
+function repeatSm(num) {
+  if (num <= 0) {
+    return;
+  }
+  console.log(num);
+
+  repeatSm(num - 1);
+}
+
+repeatSm(2000);
